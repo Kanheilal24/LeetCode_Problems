@@ -1,0 +1,26 @@
+import java.util.TreeSet;
+
+public class PrintAllDivisorsOfNum {
+    public static void print_divisors(int n) {
+        // code here
+        TreeSet<Integer> newArr = new TreeSet<>();
+
+        for (int i = 1; i <= (int) Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                newArr.add(i);
+                newArr.add(n / i);
+            }
+        }
+        for (int res : newArr) {
+            System.out.print(res + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.print("Sp the all divisors of the given number is : ");
+        print_divisors(20); // Output: 1 2 4 5 10 20
+    }
+}
+
+
+//Yahan Treeset use kiya kuin ki ye duplicate element ko remove karega + ye sorted order main return karega humein.
